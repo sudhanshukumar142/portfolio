@@ -4,7 +4,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
-import { Mail, ArrowDown, MapPin, Calendar, Award, GraduationCap } from 'lucide-react'
+import { Mail, ArrowDown, MapPin, Calendar, Award, GraduationCap, Briefcase, Wrench } from 'lucide-react'
 
 /* ─── Icons (brand icons not in lucide-react) ───────────── */
 
@@ -38,9 +38,11 @@ function LinkedinIcon({ className = '' }: { className?: string }) {
 
 const NAV_LINKS = [
   { label: 'Projects', href: '#projects' },
+  { label: 'Internship', href: '#internship' },
   { label: 'Skills', href: '#skills' },
   { label: 'Education', href: '#education' },
   { label: 'Certifications', href: '#certifications' },
+  { label: 'Workshops', href: '#workshops' },
   { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
 ]
@@ -67,7 +69,7 @@ const PROJECTS = [
 const SKILLS: { category: string; items: string[] }[] = [
   {
     category: 'Languages',
-    items: ['Python'],
+    items: ['Python', 'C'],
   },
   {
     category: 'Frameworks & Tools',
@@ -76,6 +78,25 @@ const SKILLS: { category: string; items: string[] }[] = [
   {
     category: 'Domain Skills',
     items: ['Problem-Solving', 'Responsive Web Design', 'Exploratory Data Analysis'],
+  },
+]
+
+const INTERNSHIPS = [
+  {
+    title: 'Marketing & Operations Intern (Team Lead)',
+    company: 'PhysicsWallah (Gyaan-E)',
+    duration: '6 Months',
+    mode: 'Remote',
+    type: 'Performance & Incentive-Based',
+    date: 'Feb 2026',
+    responsibilities: [
+      'Support and execute day-to-day marketing operations to drive awareness and adoption of the Gyaan-E app across college campuses.',
+      'Assist in building, onboarding, and managing a network of 40+ Campus Ambassadors (CAs) to ensure consistent engagement and activity tracking.',
+      'Coordinate expansion initiatives to increase brand presence across 20+ Tier 3-4 colleges in North India through on-ground and student-led activations.',
+      'Work closely with the team and CAs to drive monthly subscription growth through structured campaigns, events, and referral initiatives.',
+      'Plan and execute on-ground surveys and feedback collection to gather insights on student behavior, preferences, and product perception.',
+      'Conduct research & development (R&D) to identify college student needs, emerging trends, and opportunities for product and marketing improvements.',
+    ],
   },
 ]
 
@@ -101,9 +122,33 @@ const CERTIFICATIONS = [
     date: 'May 2026',
   },
   {
-    title: 'be10x AI Tools & ChatGPT Workshop',
-    issuer: 'be10x',
-    date: 'Jul 2026',
+    title: 'AI Database',
+    issuer: 'Oracle',
+    date: '2026',
+  },
+  {
+    title: 'Python Bootcamp',
+    issuer: 'Udemy',
+    date: '2026',
+  },
+  {
+    title: 'Be10x AI Tool',
+    issuer: 'Be10x',
+    date: '2026',
+  },
+  {
+    title: 'ChatGPT Workshop',
+    issuer: 'Be10x',
+    date: '2026',
+  },
+]
+
+const WORKSHOPS = [
+  {
+    title: 'Basics of Data Analytics',
+    organizer: '07 Solutions',
+    date: '2026',
+    description: 'Hands-on workshop covering fundamentals of data analytics, data visualization, and exploratory data analysis techniques.',
   },
 ]
 
@@ -269,6 +314,70 @@ function Projects() {
   )
 }
 
+/* ─── Internship ────────────────────────────────────────── */
+
+function Internship() {
+  return (
+    <section id="internship" className="scroll-mt-16 px-6 py-24">
+      <div className="mx-auto max-w-[1100px]">
+        <h2 className="text-center text-2xl font-bold tracking-tight">Internship</h2>
+        <p className="mx-auto mt-2 max-w-md text-center text-sm text-muted-foreground">
+          Professional experience and industry exposure.
+        </p>
+
+        <div className="mx-auto mt-12 grid max-w-[800px] gap-6">
+          {INTERNSHIPS.map((intern) => (
+            <Card
+              key={intern.title}
+              className="transition-colors duration-200 hover:border-[#3f3f46]"
+            >
+              <CardHeader>
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-start gap-3">
+                    <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-secondary">
+                      <Briefcase className="h-4 w-4 text-muted-foreground" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-base">{intern.title}</CardTitle>
+                      <CardDescription className="mt-1">{intern.company}</CardDescription>
+                    </div>
+                  </div>
+                  <Badge variant="outline" className="font-mono text-xs font-normal shrink-0">
+                    {intern.date}
+                  </Badge>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground mb-4">
+                  <span className="inline-flex items-center gap-1">
+                    <Calendar className="h-3 w-3" />
+                    {intern.duration}
+                  </span>
+                  <span className="inline-flex items-center gap-1">
+                    <MapPin className="h-3 w-3" />
+                    {intern.mode}
+                  </span>
+                  <Badge variant="secondary" className="font-mono text-xs font-normal">
+                    {intern.type}
+                  </Badge>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  {intern.responsibilities.map((resp, i) => (
+                    <li key={i} className="flex gap-2">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-muted-foreground/50" />
+                      {resp}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 /* ─── Skills ────────────────────────────────────────────── */
 
 function Skills() {
@@ -395,6 +504,50 @@ function Certifications() {
                   </Badge>
                 </div>
               </CardHeader>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ─── Workshops ─────────────────────────────────────────── */
+
+function Workshops() {
+  return (
+    <section id="workshops" className="scroll-mt-16 px-6 py-24">
+      <div className="mx-auto max-w-[1100px]">
+        <h2 className="text-center text-2xl font-bold tracking-tight">Workshops</h2>
+        <p className="mx-auto mt-2 max-w-md text-center text-sm text-muted-foreground">
+          Hands-on workshops and training programs I've attended.
+        </p>
+
+        <div className="mx-auto mt-12 grid max-w-[700px] gap-4">
+          {WORKSHOPS.map((workshop) => (
+            <Card
+              key={workshop.title}
+              className="transition-colors duration-200 hover:border-[#3f3f46]"
+            >
+              <CardHeader className="py-4">
+                <div className="flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-secondary">
+                      <Wrench className="h-4 w-4 text-muted-foreground" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-sm font-medium">{workshop.title}</CardTitle>
+                      <CardDescription className="text-xs mt-0.5">{workshop.organizer}</CardDescription>
+                    </div>
+                  </div>
+                  <Badge variant="outline" className="font-mono text-xs font-normal shrink-0">
+                    {workshop.date}
+                  </Badge>
+                </div>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <p className="text-sm text-muted-foreground">{workshop.description}</p>
+              </CardContent>
             </Card>
           ))}
         </div>
@@ -530,11 +683,15 @@ export default function App() {
         <Separator className="mx-auto max-w-[1100px]" />
         <Projects />
         <Separator className="mx-auto max-w-[1100px]" />
+        <Internship />
+        <Separator className="mx-auto max-w-[1100px]" />
         <Skills />
         <Separator className="mx-auto max-w-[1100px]" />
         <Education />
         <Separator className="mx-auto max-w-[1100px]" />
         <Certifications />
+        <Separator className="mx-auto max-w-[1100px]" />
+        <Workshops />
         <Separator className="mx-auto max-w-[1100px]" />
         <About />
         <Separator className="mx-auto max-w-[1100px]" />
