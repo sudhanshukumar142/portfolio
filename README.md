@@ -1,32 +1,64 @@
-# React + TypeScript + Vite
+# Sudhanshu Kumar — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A responsive personal portfolio website built to showcase my projects, technical skills, internship experience, certifications, and workshops.
 
-Currently, two official plugins are available:
+## 🔗 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**[https://portfolio-aflw.vercel.app](https://portfolio-aflw.vercel.app)**
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Technology | Purpose |
+|---|---|
+| React | Component-based UI |
+| TypeScript | Type-safe development |
+| Vite | Fast build tool & dev server |
+| CSS | Styling & responsive design |
+| Vercel | Deployment & hosting |
 
-## Expanding the Oxlint configuration
+## 📋 Sections
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- **About Me** — Background, interests, and goals
+- **Projects** — AI-Powered Attendance System, AI Resume ATS System
+- **Internship** — Marketing & Operations Intern (Team Lead) at PhysicsWallah
+- **Technical Skills** — Python, C, HTML, CSS, and more
+- **Education** — Diploma in CSE from Lovely Professional University
+- **Certifications** — Oracle, Udemy, Be10x, Apna College, LPU
+- **Workshops** — Data Analytics by 07 Solutions
+- **Contact** — Email, GitHub, LinkedIn
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+## 🚀 Run Locally
+
+```bash
+git clone https://github.com/sudhanshukumar142/portfolio.git
+cd portfolio
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+The development server will start at `http://localhost:5173`.
+
+## 📸 Screenshots
+
+| Desktop View | Mobile View |
+|---|---|
+| ![Desktop](./screenshots/desktop.png) | ![Mobile](./screenshots/mobile.png) |
+
+## ✨ Key Features
+
+- Fully responsive design (mobile, tablet, desktop)
+- Dark theme with modern UI components
+- Smooth scroll navigation
+- Detailed project showcases with GitHub links
+- Internship experience with responsibilities
+- Certification and workshop listings
+
+## 📬 Contact
+
+- **Email:** sudhanshuyadav914243@gmail.com
+- **LinkedIn:** [linkedin.com/in/sudhanshu-kumar8](https://linkedin.com/in/sudhanshu-kumar8)
+- **GitHub:** [github.com/Sudhanshukumar142](https://github.com/Sudhanshukumar142)
+
+---
+
+*Built with ❤️ by Sudhanshu Kumar*

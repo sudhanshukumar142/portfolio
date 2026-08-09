@@ -51,17 +51,44 @@ const PROJECTS = [
   {
     title: 'AI-Powered Attendance System',
     date: 'Apr 2026',
-    description:
-      'An AI-powered attendance system that uses facial recognition and artificial intelligence to automatically identify individuals and record their attendance. It provides a fast, accurate, secure, and contactless way to manage attendance while reducing manual work and preventing proxy attendance.',
+    problem: 'Manual attendance tracking is time-consuming, error-prone, and vulnerable to proxy attendance.',
+    solution: 'Built an AI-powered application that uses facial recognition to automatically identify individuals and record attendance in real time.',
+    features: [
+      'Real-time face detection via webcam using OpenCV',
+      'Facial recognition to identify registered individuals',
+      'Automatic attendance logging with timestamps',
+      'Contactless and proxy-proof attendance system',
+    ],
+    contributions: [
+      'Designed and built the complete application from scratch',
+      'Integrated OpenCV for real-time camera feed processing',
+      'Implemented face_recognition library for identity matching',
+      'Developed attendance recording and storage logic',
+      'Tested and debugged across different lighting conditions',
+    ],
     tech: ['Python', 'OpenCV', 'Face Recognition', 'AI/ML'],
     github: 'https://github.com/Sudhanshukumar142',
   },
   {
     title: 'AI Resume ATS System',
     date: 'Jun 2026',
-    description:
-      'A smart recruitment tool that uses artificial intelligence to analyze, screen, and rank resumes based on job requirements. It helps recruiters quickly identify the most suitable candidates, improves hiring efficiency, and reduces manual effort by automatically matching skills, experience, and qualifications with job descriptions.',
-    tech: ['Python', 'AI/ML', 'NLP', 'HTML', 'CSS'],
+    problem: 'Recruiters manually screening hundreds of resumes is slow and often leads to qualified candidates being overlooked.',
+    solution: 'Developed a smart resume screening tool that uses AI/NLP to parse resumes, match them against job descriptions, and rank candidates by relevance.',
+    features: [
+      'PDF resume parsing and text extraction',
+      'Keyword matching with job description using NLP',
+      'Automated scoring and candidate ranking',
+      'Clean web interface for uploading and viewing results',
+    ],
+    contributions: [
+      'Built the complete application end-to-end',
+      'Implemented resume parsing logic for PDF extraction',
+      'Developed NLP-based keyword matching algorithm',
+      'Created the scoring and ranking system',
+      'Designed and coded the frontend (HTML/CSS)',
+      'Tested with real resumes and job descriptions',
+    ],
+    tech: ['Python', 'NLP', 'AI/ML', 'HTML', 'CSS'],
     github: 'https://github.com/Sudhanshukumar142',
   },
 ]
@@ -228,7 +255,7 @@ function Hero() {
         </div>
 
         <p className="mb-4 text-sm font-medium uppercase tracking-widest text-muted-foreground">
-          CSE Diploma Student · Aspiring Developer
+          Diploma CSE Student · Python Developer · AI/ML Enthusiast
         </p>
 
         <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl">
@@ -236,7 +263,7 @@ function Hero() {
         </h1>
 
         <p className="mx-auto mt-4 max-w-lg text-base text-muted-foreground">
-          Final-year Diploma student in Computer Science & Engineering, passionate about AI, web development, and building real-world solutions.
+          Python Developer with hands-on experience in AI/ML, building real-world applications like facial recognition attendance systems and AI-powered resume screening tools.
         </p>
 
         <div className="mt-8 flex items-center justify-center gap-3">
@@ -263,7 +290,7 @@ function Projects() {
       <div className="mx-auto max-w-[1100px]">
         <h2 className="text-center text-2xl font-bold tracking-tight">Projects</h2>
         <p className="mx-auto mt-2 max-w-md text-center text-sm text-muted-foreground">
-          Things I've built to solve real-world problems.
+          Real-world problems I identified and solved through code.
         </p>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
@@ -279,13 +306,40 @@ function Projects() {
                     {project.date}
                   </Badge>
                 </div>
-                <CardDescription className="mt-2 leading-relaxed">
-                  {project.description}
-                </CardDescription>
               </CardHeader>
 
-              <CardContent className="mt-auto">
-                <div className="flex flex-wrap gap-2">
+              <CardContent className="space-y-4 text-sm text-muted-foreground">
+                <div>
+                  <p className="font-semibold text-foreground text-xs uppercase tracking-wider mb-1">Problem</p>
+                  <p className="leading-relaxed">{project.problem}</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground text-xs uppercase tracking-wider mb-1">Solution</p>
+                  <p className="leading-relaxed">{project.solution}</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground text-xs uppercase tracking-wider mb-2">Key Features</p>
+                  <ul className="space-y-1.5">
+                    {project.features.map((f, i) => (
+                      <li key={i} className="flex gap-2">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-muted-foreground/50" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground text-xs uppercase tracking-wider mb-2">My Contribution</p>
+                  <ul className="space-y-1.5">
+                    {project.contributions.map((c, i) => (
+                      <li key={i} className="flex gap-2">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-muted-foreground/50" />
+                        {c}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="flex flex-wrap gap-2 pt-2">
                   {project.tech.map((t) => (
                     <Badge
                       key={t}
@@ -298,7 +352,7 @@ function Projects() {
                 </div>
               </CardContent>
 
-              <CardFooter className="gap-2">
+              <CardFooter className="gap-2 mt-auto">
                 <Button variant="ghost" size="sm" asChild>
                   <a href={project.github} target="_blank" rel="noopener noreferrer">
                     <GithubIcon className="mr-1 h-4 w-4" />
