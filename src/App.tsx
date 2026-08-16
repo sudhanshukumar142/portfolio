@@ -96,15 +96,15 @@ const PROJECTS = [
 const SKILLS: { category: string; items: string[] }[] = [
   {
     category: 'Languages',
-    items: ['Python', 'C'],
+    items: ['Python', 'C', 'HTML/CSS', 'SQL'],
   },
   {
-    category: 'Frameworks & Tools',
-    items: ['HTML', 'CSS'],
+    category: 'Tools & Platforms',
+    items: ['Jupyter Notebook', 'Google Colab', 'GitHub', 'MySQL'],
   },
   {
-    category: 'Domain Skills',
-    items: ['Problem-Solving', 'Responsive Web Design', 'Exploratory Data Analysis'],
+    category: 'Soft Skills',
+    items: ['Problem-Solving', 'Project Management', 'Adaptability', 'Leadership'],
   },
 ]
 
@@ -129,44 +129,24 @@ const INTERNSHIPS = [
 
 const CERTIFICATIONS = [
   {
-    title: 'Effective Communication Skills',
-    issuer: 'Lovely Professional University',
-    date: 'Dec 2025',
-  },
-  {
-    title: 'Hackathon Participation Certificate',
-    issuer: 'Lovely Professional University',
-    date: 'Feb 2026',
-  },
-  {
-    title: 'Data Science Workshop',
-    issuer: '07 Solution',
-    date: 'Mar 2026',
-  },
-  {
-    title: 'Prime: AI/ML Batch',
-    issuer: 'Apna College',
-    date: 'May 2026',
-  },
-  {
     title: 'AI Database',
     issuer: 'Oracle',
-    date: '2026',
+    date: 'Aug 2026',
   },
   {
     title: 'Python Bootcamp',
     issuer: 'Udemy',
-    date: '2026',
+    date: 'Jul 2026',
   },
   {
-    title: 'Be10x AI Tool',
-    issuer: 'Be10x',
-    date: '2026',
+    title: 'be10x AI Tools and ChatGPT Workshop',
+    issuer: 'be10x',
+    date: 'Jul 2026',
   },
   {
-    title: 'ChatGPT Workshop',
-    issuer: 'Be10x',
-    date: '2026',
+    title: 'Basics of Data Analytics Workshop',
+    issuer: '07 Solutions',
+    date: 'Mar 2026',
   },
 ]
 
